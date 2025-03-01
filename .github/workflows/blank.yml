@@ -1,0 +1,16 @@
+name: Create a release
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout of repo
+        uses: actions/checkout@v2    
+
+      - name: Makke release
+        uses: softprops/action-gh-release@v1
